@@ -16,12 +16,28 @@
         <!-- Barra Lateral: Gestão de Documentos -->
         <aside class="sidebar">
             <div class="sidebar-header">
+                <a href="../../../site/index.html" class="portfolio-back-link" title="Voltar ao Portfólio Principal">
+                    <span aria-hidden="true">&larr;</span> Voltar ao Portfólio
+                </a>
                 <div class="logo-area">
                     <div class="logo-icon">📚</div>
                     <div>
                         <h1>RAG Assistant</h1>
                         <span class="badge">LangChain + ChromaDB</span>
                     </div>
+                </div>
+            </div>
+
+            <!-- Chave de acesso à API -->
+            <div class="section-card api-key-section">
+                <h2>Chave de Acesso</h2>
+                <p class="sub-text">A API exige o header <code>X-API-Key</code>. A chave fica apenas neste navegador.</p>
+                <input type="password" id="api-key-input" placeholder="Cole a API_KEY do servidor"
+                       autocomplete="off" aria-label="Chave de acesso à API">
+                <div class="api-key-actions">
+                    <button id="api-key-save" class="secondary-button" type="button">Salvar</button>
+                    <button id="api-key-clear" class="icon-button" type="button" title="Remover chave salva"
+                            aria-label="Remover chave salva">🗑️</button>
                 </div>
             </div>
 
@@ -46,7 +62,7 @@
             <div class="section-card docs-list-section">
                 <div class="section-header">
                     <h2>Documentos Indexados</h2>
-                    <button id="refresh-docs-btn" class="icon-button" title="Recarregar lista">🔄</button>
+                    <button id="refresh-docs-btn" class="icon-button" type="button" title="Recarregar lista" aria-label="Recarregar lista de documentos indexados">🔄</button>
                 </div>
                 <div id="docs-list" class="docs-list">
                     <div class="empty-state">Nenhum documento indexado ainda. Envie um arquivo acima.</div>
@@ -67,7 +83,7 @@
                     <span class="status-indicator online" id="status-indicator"></span>
                     <span id="status-text">Sistema Pronto</span>
                 </div>
-                <a href="/docs" target="_blank" class="docs-link">📖 Documentação Swagger API</a>
+                <a href="/docs" target="_blank" rel="noopener noreferrer" class="docs-link">📖 Documentação Swagger API</a>
             </div>
         </aside>
 
@@ -79,7 +95,7 @@
                     <p class="subtitle">Faça perguntas baseadas estritamente nos documentos carregados.</p>
                 </div>
                 <div class="header-actions">
-                    <button id="clear-chat-btn" class="button button-outline" title="Limpar conversa">
+                    <button id="clear-chat-btn" class="button button-outline" type="button" title="Limpar conversa">
                         🗑️ Limpar Chat
                     </button>
                 </div>
